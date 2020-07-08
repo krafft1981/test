@@ -1,7 +1,8 @@
 package com.work.test.controller;
 
 import com.work.test.dto.Book;
-import com.work.test.service.BookService;
+import com.work.test.dto.Order;
+import com.work.test.service.OrderService;
 import java.util.Arrays;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -12,23 +13,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping(value="/book")
+@RequestMapping(value="/order")
 @RestController
-public class BookController {
+public class OrderController {
 
     @Autowired
-    private BookService bookService;
+    private OrderService orderService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> doGetBookRequest(
+    public List<Order> doGetOrderRequest(
             Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-            return bookService.findById(id);
+        return null;
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void doPutBookRequest(
+    public void doPutOrderRequest(
             @NonNull Integer id,
             @NonNull String name,
             @NonNull Integer publishingYear,
@@ -36,27 +37,24 @@ public class BookController {
             @NonNull Integer[] authors,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Book book = new Book(id, name, publishingYear, annotation, Arrays.asList(authors));
-        bookService.updateBook(book);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Integer doPostBookRequest(
+    public Integer doPostOrderRequest(
             @NonNull final String name,
             @NonNull final Integer publishingYear,
             @NonNull final String annotation,
             @NonNull final Integer[] authors,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Book book = new Book(null, name, publishingYear, annotation, Arrays.asList(authors));
-        return bookService.createBook(book);
+        return 0;
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public void doDeleteBookRequest(
+    public void doDeleteOrderRequest(
             @NonNull Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        bookService.deleteBook(id);
+//        OrderService.deleteBook(id);
     }
 }

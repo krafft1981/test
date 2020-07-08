@@ -1,8 +1,7 @@
 package com.work.test.controller;
 
-import com.work.test.dto.Book;
-import com.work.test.service.BookService;
-import java.util.Arrays;
+import com.work.test.dto.Customer;
+import com.work.test.service.CustomerService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,23 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping(value="/book")
+@RequestMapping(value="/customer")
 @RestController
-public class BookController {
+public class CustomerController {
 
     @Autowired
-    private BookService bookService;
+    private CustomerService CustomerService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> doGetBookRequest(
+    public List<Customer> doGetCustomerRequest(
             Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-            return bookService.findById(id);
+//        return CustomerService.findById(id);
+        return null;
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void doPutBookRequest(
+    public void doPutCustomerRequest(
             @NonNull Integer id,
             @NonNull String name,
             @NonNull Integer publishingYear,
@@ -36,27 +36,37 @@ public class BookController {
             @NonNull Integer[] authors,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Book book = new Book(id, name, publishingYear, annotation, Arrays.asList(authors));
-        bookService.updateBook(book);
+        Customer Customer = new Customer();
+        Customer.setId(id);
+        Customer.setName(name);
+//        Customer.setPublishingYear(publishingYear);
+//        Customer.setAnnotation(annotation);
+//        Customer.setAuthors(Arrays.asList(authors));
+//        CustomerService.updateCustomer(Customer);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Integer doPostBookRequest(
+    public Integer doPostCustomerRequest(
             @NonNull final String name,
             @NonNull final Integer publishingYear,
             @NonNull final String annotation,
             @NonNull final Integer[] authors,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Book book = new Book(null, name, publishingYear, annotation, Arrays.asList(authors));
-        return bookService.createBook(book);
+        Customer Customer = new Customer();
+        Customer.setName(name);
+//        Customer.setPublishingYear(publishingYear);
+//        Customer.setAnnotation(annotation);
+//        Customer.setAuthors(Arrays.asList(authors));
+//        return CustomerService.createCustomer(Customer);
+        return 0;
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public void doDeleteBookRequest(
+    public void doDeleteCustomerRequest(
             @NonNull Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        bookService.deleteBook(id);
+//        CustomerService.deleteCustomer(id);
     }
 }

@@ -6,6 +6,7 @@ import com.work.test.dao.BookEntity;
 import com.work.test.dao.BookRepository;
 import com.work.test.dto.Book;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.NonNull;
@@ -23,11 +24,12 @@ public class BookService {
 
     public Integer createBook(@NonNull Book book) {
 
-        BookEntity entity = new BookEntity();
-
-        entity.setPublishingYear(book.getPublishingYear());
-        entity.setAnnotation(book.getAnnotation());
-        entity.setName(book.getName());
+        BookEntity entity = new BookEntity(
+                book.getId(),
+                book.getName(),
+                book.getPublishingYear(),
+                book.getAnnotation(),
+                new HashSet<>());
 
         book.getAuthors().stream().forEach(id -> {
             AuthorEntity author = authorRepository.findById(id).orElse(null);
@@ -71,11 +73,13 @@ public class BookService {
 
     private Book daoToDto(BookEntity entity) {
 
-        Book book = new Book();
-        book.setId(entity.getId());
-        book.setAnnotation(entity.getAnnotation());
-        book.setName(entity.getName());
-        book.setPublishingYear(entity.getPublishingYear());
+        Book book = new Book(
+                entity.getId(),
+                entity.getName(),
+                entity.getPublishingYear(),
+                entity.getAnnotation(),
+                new ArrayList<>());
+
         entity.getAuthors()
               .stream()
               .forEach( author -> {book.addAuthor(author.getId());});
@@ -85,11 +89,13 @@ public class BookService {
 
     private BookEntity dtoToDao(Book book) {
 
-        BookEntity entity = new BookEntity();
-        entity.setName(book.getName());
-        entity.setAnnotation(book.getAnnotation());
-        entity.setPublishingYear(book.getPublishingYear());
-        entity.setId(book.getId());
+        BookEntity entity = new BookEntity(
+                book.getId(),
+                book.getName(),
+                book.getPublishingYear(),
+                book.getAnnotation(),
+                new HashSet<>());
+
         book.getAuthors().stream().forEach(id -> {
             AuthorEntity author = authorRepository.findById(id).orElse(null);
             if (author != null) {

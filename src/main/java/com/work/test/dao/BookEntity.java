@@ -1,6 +1,5 @@
 package com.work.test.dao;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
@@ -14,20 +13,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name="book", schema = "public", catalog = "relationship")
 @Setter
-@NoArgsConstructor
+@AllArgsConstructor
 public class BookEntity {
 
 	private Integer id;
 	private String name;
 	private Integer publishingYear;
 	private String annotation;
-	private Set<AuthorEntity> authors = new HashSet<>();
+	private Set<AuthorEntity> authors;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

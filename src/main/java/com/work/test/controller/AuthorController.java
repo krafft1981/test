@@ -35,11 +35,7 @@ public class AuthorController {
             @NonNull Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Author author = new Author();
-        author.setId(id);
-        author.setFio(fio);
-        author.setBirthYear(birthYear);
-        author.setBooks(Arrays.asList(books));
+        Author author = new Author(id, fio, birthYear, Arrays.asList(books));
         authorService.updateAuthor(author);
     }
 
@@ -50,10 +46,8 @@ public class AuthorController {
             @NonNull Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Author author = new Author();
-        author.setFio(fio);
-        author.setBirthYear(birthYear);
-        author.setBooks(Arrays.asList(books));
+        Integer id = 0;
+        Author author = new Author(id, fio, birthYear, Arrays.asList(books));
         return authorService.createAuthor(author);
     }
 

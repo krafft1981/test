@@ -6,6 +6,7 @@ import com.work.test.dao.BookEntity;
 import com.work.test.dao.BookRepository;
 import com.work.test.dto.Author;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.NonNull;
@@ -23,11 +24,11 @@ public class AuthorService {
 
     public Integer createAuthor(@NonNull Author author) {
 
-        AuthorEntity entity = new AuthorEntity();
-
-        entity.setFio(author.getFio());
-        entity.setBirthYear(author.getBirthYear());
-
+        AuthorEntity entity = new AuthorEntity(
+                author.getId(),
+                author.getFio(),
+                author.getBirthYear(),
+                new HashSet<>());
         author.getBooks().stream().forEach(id -> {
             BookEntity book = bookRepository.findById(id).orElse(null);
             if (book != null) {
@@ -69,12 +70,11 @@ public class AuthorService {
 
     private Author daoToDto(AuthorEntity entity) {
 
-        Author author = new Author();
-
-        author.setId(entity.getId());
-        author.setFio(entity.getFio());
-        author.setBirthYear(entity.getBirthYear());
-
+        Author author = new Author(
+                entity.getId(),
+                entity.getFio(),
+                entity.getBirthYear(),
+                new ArrayList<>());
         entity.getBooks()
               .stream()
               .forEach( book -> { author.addBook(book.getId());});
@@ -84,11 +84,11 @@ public class AuthorService {
 
     private AuthorEntity dtoToDao(Author author) {
 
-        AuthorEntity entity = new AuthorEntity();
-
-        entity.setId(author.getId());
-        entity.setFio(author.getFio());
-        entity.setBirthYear(author.getBirthYear());
+        AuthorEntity entity = new AuthorEntity(
+                author.getId(),
+                author.getFio(),
+                author.getBirthYear(),
+                new HashSet<>());
 
         author.getBooks().stream().forEach(id -> {
             BookEntity book = bookRepository.findById(id).orElse(null);
