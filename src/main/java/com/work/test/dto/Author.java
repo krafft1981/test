@@ -17,13 +17,4 @@ public class Author {
     public void addBook(Integer id) {
         books.add(id);
     }
-
-    @Override
-    public String toString() {
-        StringBuilder authorString = new StringBuilder();
-        books.stream().forEach(str -> { authorString.append(str + " "); });
-        return String.format(
-                "Book[id=%d, fio='%s', birthYear='%d', books='%s']",
-                id, fio, birthYear, authorString);
-    }
 }

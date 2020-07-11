@@ -18,13 +18,4 @@ public class Book {
     public void addAuthor(Integer id) {
         authors.add(id);
     }
-
-    @Override
-    public String toString() {
-        StringBuilder authorString = new StringBuilder();
-        authors.stream().forEach(str -> { authorString.append(str + " "); });
-        return String.format(
-                "Book[id=%d, name='%s', publishingYear='%d', annotation='%s', authors='%s']",
-                id, name, publishingYear, annotation, authorString);
-    }
 }
