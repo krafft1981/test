@@ -16,15 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
     @Autowired
-    private CustomerService CustomerService;
+    private CustomerService customerService;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Customer> doGetCustomerRequest(
             Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-//        return CustomerService.findById(id);
-        return null;
+        return customerService.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
@@ -67,6 +66,6 @@ public class CustomerController {
             @NonNull Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-//        CustomerService.deleteCustomer(id);
+        customerService.deleteCustomer(id);
     }
 }

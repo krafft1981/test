@@ -1,31 +1,28 @@
 package com.work.test.dao;
 
 import java.text.DateFormat;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name="order", schema = "public", catalog = "relationship")
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class OrderEntity {
 
     private Integer id;
-//    private Integer customerId;
-//    private Set<BookEntity> books;
+    private Integer customerId;
+    private Set<BookEntity> books;
     private DateFormat startedAt;
     private DateFormat stoppedAt;
     private boolean finished;

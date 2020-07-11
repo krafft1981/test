@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="002a976b-3385-4199-9532-b81d6d932d2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/CrudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/CrudApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/AuthorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/AuthorEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +75,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -156,6 +162,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="279" y="104" width="1140" height="859" key="CommitChangelistDialog2" timestamp="1594373866754">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="279" y="104" width="1140" height="859" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594373866754" />
     <state width="1814" height="411" key="GridCell.Tab.0.bottom" timestamp="1594125575494">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

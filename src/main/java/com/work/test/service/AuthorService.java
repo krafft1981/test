@@ -77,7 +77,7 @@ public class AuthorService {
                 new ArrayList<>());
         entity.getBooks()
               .stream()
-              .forEach( book -> { author.addBook(book.getId());});
+              .forEach( book -> { author.addBook(book.getId()); });
 
         return author;
     }

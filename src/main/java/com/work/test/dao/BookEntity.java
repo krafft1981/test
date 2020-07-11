@@ -14,12 +14,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name="book", schema = "public", catalog = "relationship")
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class BookEntity {
 
 	private Integer id;
