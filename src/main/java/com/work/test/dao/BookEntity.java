@@ -1,6 +1,5 @@
 package com.work.test.dao;
 
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -66,12 +65,5 @@ public class BookEntity {
 	@Column(name = "annotation", nullable = true, insertable = true, updatable = true)
 	public String getAnnotation() {
 		return annotation;
-	}
-
-	@Override
-	public String toString() {
-		return String.format(
-			"Book[id=%d, name='%s', publishingYear='%d', annotation='%s']",
-				id, name, publishingYear, annotation);
 	}
 }

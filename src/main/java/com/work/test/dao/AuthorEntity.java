@@ -57,11 +57,4 @@ public class AuthorEntity {
 	public Integer getBirthYear() {
 		return birthYear;
 	}
-
-	@Override
-	public String toString() {
-		return String.format(
-				"Author[id=%d, fio='%s', birthYear='%d']",
-				id, fio, birthYear);
-	}
 }
