@@ -29,6 +29,7 @@ public class AuthorService {
                 author.getFio(),
                 author.getBirthYear(),
                 new HashSet<>());
+
         author.getBooks().stream().forEach(id -> {
             BookEntity book = bookRepository.findById(id).orElse(null);
             if (book != null) {
@@ -37,6 +38,13 @@ public class AuthorService {
         });
 
         return authorRepository.saveAndFlush(entity).getId();
+    }
+
+    public List<Author> getAll() {
+        return authorRepository
+                .findAll()
+                .stream().map(entity -> { return daoToDto(entity); })
+                .collect(Collectors.toList());
     }
 
     public List<Author> findById(Integer id) {
@@ -48,12 +56,8 @@ public class AuthorService {
             }
             return authorList;
         }
-        else {
-            return authorRepository
-                    .findAll()
-                    .stream().map(entity -> { return daoToDto(entity); })
-                    .collect(Collectors.toList());
-        }
+
+        return getAll();
     }
 
     public void updateAuthor(@NonNull Author author) {
@@ -75,6 +79,7 @@ public class AuthorService {
                 entity.getFio(),
                 entity.getBirthYear(),
                 new ArrayList<>());
+
         entity.getBooks()
               .stream()
               .forEach( book -> { author.addBook(book.getId()); });

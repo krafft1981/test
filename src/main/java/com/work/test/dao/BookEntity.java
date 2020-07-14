@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name="book", schema = "public", catalog = "relationship")
@@ -51,6 +52,7 @@ public class BookEntity {
 
 	@Basic
 	@Column(name = "name", nullable = true, insertable = true, updatable = true)
+	@Type(type="text")
 	public String getName() {
 		return name;
 	}
@@ -63,6 +65,7 @@ public class BookEntity {
 
 	@Basic
 	@Column(name = "annotation", nullable = true, insertable = true, updatable = true)
+	@Type(type="text")
 	public String getAnnotation() {
 		return annotation;
 	}

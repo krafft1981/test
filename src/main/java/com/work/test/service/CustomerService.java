@@ -5,6 +5,7 @@ import com.work.test.dao.CustomerRepository;
 import com.work.test.dao.OrderRepository;
 import com.work.test.dto.Customer;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,8 @@ public class CustomerService {
         }
     }
 
-    public List<Customer> findById(Integer id) {
+    public List<Customer> findById(Integer id, boolean finished) {
+
         return null;
     }
 
@@ -47,8 +49,7 @@ public class CustomerService {
         Customer customer = new Customer(
                 entity.getId(),
                 entity.getName(),
-                entity.getPhone(),
-                new ArrayList<>());
+                entity.getPhone());
 
 //        entity.getBooks()
 //                .stream()
@@ -59,19 +60,12 @@ public class CustomerService {
 
     private CustomerEntity dtoToDao(Customer customer) {
 
-        CustomerEntity entity = new CustomerEntity();
-//                author.getId(),
-//                author.getFio(),
-//                author.getBirthYear(),
-//                new HashSet<>());
-/*
-        author.getBooks().stream().forEach(id -> {
-            BookEntity book = bookRepository.findById(id).orElse(null);
-            if (book != null) {
-                entity.addBook(book);
-            }
-        });
-*/
+        CustomerEntity entity = new CustomerEntity(
+                customer.getId(),
+                customer.getName(),
+                customer.getPhone(),
+                new HashSet<>());
+
         return entity;
     }
 }

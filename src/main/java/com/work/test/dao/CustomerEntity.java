@@ -12,22 +12,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name="customer", schema = "public", catalog = "relationship")
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class CustomerEntity {
 
     private Integer id;
     private String name;
     private String phone;
-    private Set<OrderEntity> orders = new HashSet<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,17 +36,15 @@ public class CustomerEntity {
         return id;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="customer_order",
-            joinColumns=@JoinColumn(name="customer_id", nullable = false),
-            inverseJoinColumns=@JoinColumn(name="order_id", nullable = false)
-    )
+    @OneToMany
     public Set<OrderEntity> getOrders() {
         return orders;
     }
+    private Set<OrderEntity> orders = new HashSet<>();
 
     @Basic
     @Column(name = "name", nullable = true, insertable = true, updatable = true)
+    @Type(type="text")
     public String getName() {
         return name;
     }

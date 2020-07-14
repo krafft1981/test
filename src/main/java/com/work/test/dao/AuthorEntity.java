@@ -1,5 +1,6 @@
 package com.work.test.dao;
 
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name="author", schema = "public", catalog = "relationship")
@@ -48,6 +50,7 @@ public class AuthorEntity {
 
 	@Basic
 	@Column(name = "fio", nullable = true, insertable = true, updatable = true)
+	@Type(type="text")
 	public String getFio() {
 		return fio;
 	}

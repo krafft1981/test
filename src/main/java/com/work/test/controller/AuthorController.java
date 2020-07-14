@@ -10,6 +10,7 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping(value="/author")
@@ -21,7 +22,7 @@ public class AuthorController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Author> doGetAuthorRequest(
-            Integer id,
+            @RequestParam(value = "id", required = false) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
         return authorService.findById(id);
@@ -29,10 +30,10 @@ public class AuthorController {
 
     @RequestMapping(method = RequestMethod.PUT)
     public void doPutAuthorRequest(
-            @NonNull Integer id,
-            @NonNull String fio,
-            @NonNull Integer birthYear,
-            @NonNull Integer[] books,
+            @RequestParam(value = "id", required = true) Integer id,
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
         Author author = new Author(id, fio, birthYear, Arrays.asList(books));
@@ -41,19 +42,18 @@ public class AuthorController {
 
     @RequestMapping(method = RequestMethod.POST)
     public Integer doPostAuthorRequest(
-            @NonNull String fio,
-            @NonNull Integer birthYear,
-            @NonNull Integer[] books,
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Integer id = 0;
-        Author author = new Author(id, fio, birthYear, Arrays.asList(books));
+        Author author = new Author(null, fio, birthYear, Arrays.asList(books));
         return authorService.createAuthor(author);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
     public void doDeleteAuthorRequest(
-            @NonNull Integer id,
+            @RequestParam(value = "id", required = true) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
         authorService.deleteAuthor(id);
