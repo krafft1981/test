@@ -2,27 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d79bf02d-54c5-44ee-bada-3b02a21a7614" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/send.sh" beforeDir="false" afterPath="$PROJECT_DIR$/send.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/config/MvcWebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/config/MvcWebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/MvcAuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/mvcController/MvcAuthorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/MvcBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/mvcController/MvcBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/MvcCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/mvcController/MvcCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/MvcIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/mvcController/MvcIndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/MvcOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/mvcController/MvcOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/AuthorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/AuthorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/work/test/CrudApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="test" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="test" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="test" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -87,21 +104,21 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.work.test.controller" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/work/test/config" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.work.test.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/views" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/work/test/config" />
     </key>
   </component>
   <component name="RunManager">
@@ -168,22 +185,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="710" y="330" width="743" height="707" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594959705023" />
-    <state width="1744" height="245" key="GridCell.Tab.0.bottom" timestamp="1594843178564">
+    <state width="1744" height="264" key="GridCell.Tab.0.bottom" timestamp="1595347620175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1744" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178564" />
-    <state width="1744" height="245" key="GridCell.Tab.0.center" timestamp="1594843178563">
+    <state width="1744" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595347620175" />
+    <state width="1744" height="264" key="GridCell.Tab.0.center" timestamp="1595347620175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1744" height="245" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178563" />
-    <state width="1744" height="245" key="GridCell.Tab.0.left" timestamp="1594843178563">
+    <state width="1744" height="264" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595347620175" />
+    <state width="1744" height="264" key="GridCell.Tab.0.left" timestamp="1595347620175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1744" height="245" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178563" />
-    <state width="1744" height="245" key="GridCell.Tab.0.right" timestamp="1594843178564">
+    <state width="1744" height="264" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595347620175" />
+    <state width="1744" height="264" key="GridCell.Tab.0.right" timestamp="1595347620175">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1744" height="245" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178564" />
+    <state width="1744" height="264" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595347620175" />
     <state x="397" y="177" width="992" height="732" key="SettingsEditor" timestamp="1595258486076">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

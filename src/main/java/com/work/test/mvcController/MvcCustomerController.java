@@ -1,4 +1,4 @@
-package com.work.test.controller;
+package com.work.test.mvcController;
 
 import com.work.test.dto.Customer;
 import com.work.test.service.CustomerService;

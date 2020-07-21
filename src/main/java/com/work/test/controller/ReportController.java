@@ -1,4 +1,4 @@
-package com.work.test.controller.rest;
+package com.work.test.controller;
 
 import com.work.test.dto.Report;
 import com.work.test.service.ReportService;

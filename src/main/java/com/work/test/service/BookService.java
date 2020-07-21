@@ -5,6 +5,8 @@ import com.work.test.dao.AuthorRepository;
 import com.work.test.dao.BookEntity;
 import com.work.test.dao.BookRepository;
 import com.work.test.dto.Book;
+import com.work.test.exception.AuthorNotFoundException;
+import com.work.test.exception.BookNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -32,10 +34,10 @@ public class BookService {
                 new HashSet<>());
 
         book.getAuthors().stream().forEach(id -> {
-            AuthorEntity author = authorRepository.findById(id).orElse(null);
-            if (author != null) {
-                entity.addAuthor(author);
-            }
+            AuthorEntity author = authorRepository
+                    .findById(id)
+                    .orElseThrow(() -> new AuthorNotFoundException(id));
+            entity.addAuthor(author);
         });
 
         return bookRepository.saveAndFlush(entity).getId();
@@ -44,10 +46,10 @@ public class BookService {
     public List<Book> findById(Integer id) {
         if (id != null) {
             List<Book> bookList = new ArrayList<>();
-            BookEntity entity = bookRepository.findById(id).orElse(null);
-            if (entity != null) {
-                bookList.add(daoToDto(entity));
-            }
+            BookEntity entity = bookRepository
+                    .findById(id)
+                    .orElseThrow(() -> new BookNotFoundException(id));
+            bookList.add(daoToDto(entity));
             return bookList;
         }
 
@@ -59,16 +61,17 @@ public class BookService {
     public List<Book> getAll() {
         return bookRepository
                 .findAll()
-                .stream().map(entity -> { return daoToDto(entity); })
+                .stream()
+                .map(entity -> { return daoToDto(entity); })
                 .collect(Collectors.toList());
     }
 
     public void updateBook(@NonNull Book book) {
 
-        BookEntity entity = bookRepository.findById(book.getId()).orElse(null);
-        if (entity != null) {
-            bookRepository.saveAndFlush(dtoToDao(book));
-        }
+        BookEntity entity = bookRepository
+                .findById(book.getId())
+                .orElseThrow(() -> new BookNotFoundException(book.getId()));
+        bookRepository.saveAndFlush(dtoToDao(book));
     }
 
     public void deleteBook(Integer id) {
@@ -101,10 +104,10 @@ public class BookService {
                 new HashSet<>());
 
         book.getAuthors().stream().forEach(id -> {
-            AuthorEntity author = authorRepository.findById(id).orElse(null);
-            if (author != null) {
-                entity.addAuthor(author);
-            }
+            AuthorEntity author = authorRepository
+                    .findById(id)
+                    .orElseThrow(() -> new AuthorNotFoundException(book.getId()));
+            entity.addAuthor(author);
         });
 
         return entity;

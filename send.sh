@@ -23,10 +23,9 @@ do
 	job=$(((RANDOM % 2) + 1))
 	if [ $job -eq 2 ]
 	then
-		curl -X POST "http://192.168.15.103:8080/order/finished?id=$order" 2> /dev/null
+#		curl -X POST "http://192.168.15.103:8080/order/finished?id=$order" 2> /dev/null
 		check
 	fi
-
 
 	echo "author=[$author] book[$book] customer=[$customer] order=[$order] job[$job]"
 done

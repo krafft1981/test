@@ -1,24 +1,31 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="UTF-8" />
-    <title>Author List</title>
+    <title>Report List</title>
 </head>
 <body>
-<h1>Author List</h1>
-<a href="addPerson">Add Author</a>
+<h1>Report List</h1>
+<a href="/mvc/">index</a>
 <br/><br/>
-<div>
-    <table border="1">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-        <tr th:each ="person : ${persons}">
-            <td th:utext="${person.firstName}">...</td>
-            <td th:utext="${person.lastName}">...</td>
-        </tr>
-    </table>
-</div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Report</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Type 1</td>
+        <td><a th:href="@{/mvc/report/(type=1)}">get</a></td>
+    </tr>
+
+    <tr>
+        <td>Type 2</td>
+        <td><a th:href="@{/mvc/report/(type=2)}">get</a></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

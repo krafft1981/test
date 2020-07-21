@@ -1,4 +1,4 @@
-package com.work.test.controller.rest;
+package com.work.test.controller;
 
 import com.work.test.dto.Order;
 import com.work.test.service.OrderService;

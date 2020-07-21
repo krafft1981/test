@@ -1,4 +1,4 @@
-package com.work.test.controller;
+package com.work.test.mvcController;
 
 import com.work.test.dto.Author;
 import com.work.test.service.AuthorService;

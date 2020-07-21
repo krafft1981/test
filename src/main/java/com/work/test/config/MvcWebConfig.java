@@ -41,19 +41,4 @@ public class MvcWebConfig {
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
     }
-/*
-
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
-        registry.addResourceHandler("/index").addResourceLocations("index");
-        registry.addResourceHandler("/").addResourceLocations("index");
-        registry.addResourceHandler("/login").addResourceLocations("login");
-        registry.addResourceHandler("/mvc/author").addResourceLocations("author");
-        registry.addResourceHandler("/mvc/book").addResourceLocations("book");
-        registry.addResourceHandler("/mvc/customer").addResourceLocations("customer");
-        registry.addResourceHandler("/mvc/order").addResourceLocations("order");
-        registry.addResourceHandler("/mvc/report").addResourceLocations("report");
-    }
-
- */
 }

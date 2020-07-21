@@ -30,9 +30,9 @@
         <td th:utext="${order.startedAt}"></td>
         <td th:utext="${order.stoppedAt}"></td>
         <td th:utext="${order.finished}"></td>
-        <td><a th:href="@{/mvc/order/edit/(id=${order.id})}">Edit</a></td>
-        <td><a th:href="@{/mvc/order/delete/(id=${order.id})}">Delete</a></td>
-        <td><a th:href="@{/mvc/order/finished/(id=${order.id})}">Finished</a></td>
+        <td th:unless="${order.finished}"><a th:href="@{/mvc/order/edit/(id=${order.id})}">Edit</a></td>
+        <td th:unless="${order.finished}"><a th:href="@{/mvc/order/delete/(id=${order.id})}">Delete</a></td>
+        <td th:unless="${order.finished}"><a th:href="@{/mvc/order/finished/(id=${order.id})}">Finished</a></td>
     </tr>
     </tbody>
 </table>

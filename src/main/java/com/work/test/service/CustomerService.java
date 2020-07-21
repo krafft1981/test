@@ -4,6 +4,8 @@ import com.work.test.dao.CustomerEntity;
 import com.work.test.dao.CustomerRepository;
 import com.work.test.dao.OrderRepository;
 import com.work.test.dto.Customer;
+import com.work.test.exception.AuthorNotFoundException;
+import com.work.test.exception.CustomerNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -28,20 +30,21 @@ public class CustomerService {
 
     public void updateCustomer(@NonNull Customer customer) {
 
-        CustomerEntity entity = customerRepository.findById(customer.getId()).orElse(null);
-        if (entity != null) {
-            customerRepository.saveAndFlush(dtoToDao(customer));
-        }
+        CustomerEntity entity = customerRepository
+                .findById(customer.getId())
+                .orElseThrow(() -> new CustomerNotFoundException(customer.getId()));
+
+        customerRepository.saveAndFlush(dtoToDao(customer));
     }
 
     public List<Customer> findById(Integer id) {
 
         if (id != null) {
             List<Customer> customerList = new ArrayList<>();
-            CustomerEntity entity = customerRepository.findById(id).orElse(null);
-            if (entity != null) {
-                customerList.add(daoToDto(entity));
-            }
+            CustomerEntity entity = customerRepository
+                    .findById(id)
+                    .orElseThrow(() -> new CustomerNotFoundException(id));
+            customerList.add(daoToDto(entity));
             return customerList;
         }
 

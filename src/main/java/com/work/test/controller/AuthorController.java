@@ -1,57 +1,61 @@
-package com.work.test.controller.rest;
+package com.work.test.controller;
 
-import com.work.test.dto.Customer;
-import com.work.test.service.CustomerService;
+import com.work.test.dto.Author;
+import com.work.test.service.AuthorService;
+import java.util.Arrays;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping(value="/customer")
+@RequestMapping(value="/author")
 @RestController
-public class CustomerController {
+public class AuthorController {
 
     @Autowired
-    private CustomerService customerService;
+    private AuthorService authorService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Customer> doGetCustomerRequest(
+    public List<Author> doGetAuthorRequest(
             @RequestParam(value = "id", required = false) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        return customerService.findById(id);
+        return authorService.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void doPutCustomerRequest(
+    public void doPutAuthorRequest(
             @RequestParam(value = "id", required = true) Integer id,
-            @RequestParam(value = "name", required = true) String name,
-            @RequestParam(value = "phone", required = true) String phone,
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Customer customer = new Customer(id, name, phone);
-        customerService.updateCustomer(customer);
+        Author author = new Author(id, fio, birthYear, Arrays.asList(books));
+        authorService.updateAuthor(author);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Integer doPostCustomerRequest(
-            @RequestParam(value = "name", required = true) String name,
-            @RequestParam(value = "phone", required = true) String phone,
+    public Integer doPostAuthorRequest(
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Customer customer = new Customer(null, name, phone);
-        return customerService.createCustomer(customer);
+        Author author = new Author(null, fio, birthYear, Arrays.asList(books));
+        return authorService.createAuthor(author);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public void doDeleteCustomerRequest(
+    public void doDeleteAuthorRequest(
             @RequestParam(value = "id", required = true) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        customerService.deleteCustomer(id);
+        authorService.deleteAuthor(id);
     }
 }

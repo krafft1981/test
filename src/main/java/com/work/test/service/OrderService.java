@@ -7,6 +7,10 @@ import com.work.test.dao.CustomerRepository;
 import com.work.test.dao.OrderEntity;
 import com.work.test.dao.OrderRepository;
 import com.work.test.dto.Order;
+import com.work.test.exception.AuthorNotFoundException;
+import com.work.test.exception.BookNotFoundException;
+import com.work.test.exception.CustomerNotFoundException;
+import com.work.test.exception.OrderNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,10 +40,9 @@ public class OrderService {
 
     public void setFinished(Integer id) {
 
-        OrderEntity entity = orderRepository.findById(id).orElse(null);
-        if (entity == null) {
-            return;
-        }
+        OrderEntity entity = orderRepository
+                .findById(id)
+                .orElseThrow(() -> new OrderNotFoundException(id));
         entity.setFinished();
         entity.setStoppedAt(new Date(System.currentTimeMillis()));
         orderRepository.saveAndFlush(entity);
@@ -47,11 +50,11 @@ public class OrderService {
 
     public void updateOrder(Order order) {
 
-        OrderEntity entity = orderRepository.findById(order.getId()).orElse(null);
-        if (entity != null) {
-            if (entity.getFinished() != true) {
-                orderRepository.saveAndFlush(dtoToDao(order));
-            }
+        OrderEntity entity = orderRepository
+                .findById(order.getId())
+                .orElseThrow(() -> new OrderNotFoundException(order.getId()));
+        if (entity.getFinished() != true) {
+            orderRepository.saveAndFlush(dtoToDao(order));
         }
     }
 
@@ -66,10 +69,10 @@ public class OrderService {
 
         if (id != null) {
             List<Order> orderList = new ArrayList<>();
-            OrderEntity entity = orderRepository.findById(id).orElse(null);
-            if (entity != null) {
-                orderList.add(daoToDto(entity));
-            }
+            OrderEntity entity = orderRepository
+                    .findById(id)
+                    .orElseThrow(() -> new OrderNotFoundException(id));
+            orderList.add(daoToDto(entity));
             return orderList;
         }
 
@@ -110,15 +113,17 @@ public class OrderService {
         entity.setName(order.getName());
         entity.setFinished(order.isFinished());
         Integer customerId = order.getCustomerId();
-        CustomerEntity customerEntity = customerRepository.findById(customerId).orElse(null);
+        CustomerEntity customerEntity = customerRepository
+                .findById(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException(customerId));
         entity.setCustomer(customerEntity);
         order.getBooks()
                 .stream()
                 .forEach(bookId -> {
-                    BookEntity bookEntity = bookRepository.findById(bookId).orElse(null);
-                    if (bookEntity != null) {
-                        entity.addBook(bookEntity);
-                    }
+                    BookEntity bookEntity = bookRepository
+                            .findById(bookId)
+                            .orElseThrow(() -> new BookNotFoundException(bookId));
+                    entity.addBook(bookEntity);
                 });
         return entity;
     }

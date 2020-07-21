@@ -1,4 +1,4 @@
-package com.work.test.controller.rest;
+package com.work.test.controller;
 
 import com.work.test.dto.Book;
 import com.work.test.service.BookService;
