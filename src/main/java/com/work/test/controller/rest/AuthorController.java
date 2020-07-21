@@ -1,64 +1,61 @@
-package com.work.test.controller;
+package com.work.test.controller.rest;
 
-import com.work.test.dto.Order;
-import com.work.test.service.OrderService;
+import com.work.test.dto.Author;
+import com.work.test.service.AuthorService;
 import java.util.Arrays;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping(value="/order")
+@RequestMapping(value="/author")
 @RestController
-public class OrderController {
+public class AuthorController {
 
     @Autowired
-    private OrderService orderService;
+    private AuthorService authorService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Order> doGetOrderRequest(
+    public List<Author> doGetAuthorRequest(
             @RequestParam(value = "id", required = false) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        return orderService.getById(id);
+        return authorService.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void doPutOrderRequest(
+    public void doPutAuthorRequest(
             @RequestParam(value = "id", required = true) Integer id,
-            @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "books", required = false) Integer[] bookIds,
-            @RequestParam(value = "finished", required = false) boolean finished,
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-            Order order = new Order(id, name, Arrays.asList(bookIds));
-            if (finished == true) {
-                orderService.setFinished(id);
-            }
-
-            orderService.updateOrder(order);
+        Author author = new Author(id, fio, birthYear, Arrays.asList(books));
+        authorService.updateAuthor(author);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Integer doPostOrderRequest(
-            @RequestParam(value = "name", required = true) String name,
-            @RequestParam(value = "clientId", required = true) Integer clientId,
-            @RequestParam(value = "book", required = false) Integer[] bookIds,
+    public Integer doPostAuthorRequest(
+            @RequestParam(value = "fio", required = true) String fio,
+            @RequestParam(value = "birthYear", required = true) Integer birthYear,
+            @RequestParam(value = "books", required = true) Integer[] books,
             HttpServletResponse response,
             HttpServletRequest request) {
-        Order order = new Order(name, clientId, Arrays.asList(bookIds));
-        return orderService.createOrder(order);
+        Author author = new Author(null, fio, birthYear, Arrays.asList(books));
+        return authorService.createAuthor(author);
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
-    public void doDeleteOrderRequest(
+    public void doDeleteAuthorRequest(
             @RequestParam(value = "id", required = true) Integer id,
             HttpServletResponse response,
             HttpServletRequest request) {
-        orderService.deleteOrder(id);
+        authorService.deleteAuthor(id);
     }
 }

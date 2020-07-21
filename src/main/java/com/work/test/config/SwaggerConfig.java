@@ -15,7 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"com.work.test.controller"})
 public class SwaggerConfig {
     @Bean
-    @Description("Текстовое описание бина api")
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()

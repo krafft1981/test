@@ -7,6 +7,7 @@ import com.work.test.dto.Customer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,9 +34,27 @@ public class CustomerService {
         }
     }
 
-    public List<Customer> findById(Integer id, boolean finished) {
+    public List<Customer> findById(Integer id) {
 
-        return null;
+        if (id != null) {
+            List<Customer> customerList = new ArrayList<>();
+            CustomerEntity entity = customerRepository.findById(id).orElse(null);
+            if (entity != null) {
+                customerList.add(daoToDto(entity));
+            }
+            return customerList;
+        }
+
+        else {
+            return getAll();
+        }
+    }
+
+    public List<Customer> getAll() {
+        return customerRepository
+                .findAll()
+                .stream().map(entity -> { return daoToDto(entity); })
+                .collect(Collectors.toList());
     }
 
     public Integer createCustomer(@NonNull Customer customer) {
@@ -50,10 +69,6 @@ public class CustomerService {
                 entity.getId(),
                 entity.getName(),
                 entity.getPhone());
-
-//        entity.getBooks()
-//                .stream()
-//                .forEach( book -> { author.addBook(book.getId()); });
 
         return customer;
     }

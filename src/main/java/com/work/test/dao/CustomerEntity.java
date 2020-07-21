@@ -3,15 +3,11 @@ package com.work.test.dao;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -23,11 +19,13 @@ import org.hibernate.annotations.Type;
 @Table(name="customer", schema = "public", catalog = "relationship")
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class CustomerEntity {
 
     private Integer id;
     private String name;
     private String phone;
+    private Set<OrderEntity> orders = new HashSet<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +38,6 @@ public class CustomerEntity {
     public Set<OrderEntity> getOrders() {
         return orders;
     }
-    private Set<OrderEntity> orders = new HashSet<>();
 
     @Basic
     @Column(name = "name", nullable = true, insertable = true, updatable = true)

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8" />
+    <title>Order List</title>
+</head>
+<body>
+<h1>Order List</h1>
+<a href="/mvc/">index</a>
+<a href="/mvc/order/add">Add Order</a>
+<br/><br/>
+<table border="1">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>customer</th>
+        <th>books</th>
+        <th>createdAt</th>
+        <th>finishedAt</th>
+        <th>finished</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each ="order : ${orders}">
+        <td th:utext="${order.id}"></td>
+        <td th:utext="${order.name}"></td>
+        <td th:utext="${order.customerId}"></td>
+        <td th:utext="${order.books}"></td>
+        <td th:utext="${order.startedAt}"></td>
+        <td th:utext="${order.stoppedAt}"></td>
+        <td th:utext="${order.finished}"></td>
+        <td><a th:href="@{/mvc/order/edit/(id=${order.id})}">Edit</a></td>
+        <td><a th:href="@{/mvc/order/delete/(id=${order.id})}">Delete</a></td>
+        <td><a th:href="@{/mvc/order/finished/(id=${order.id})}">Finished</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

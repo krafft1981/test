@@ -1,4 +1,4 @@
-package com.work.test.controller;
+package com.work.test.controller.rest;
 
 import com.work.test.dto.Customer;
 import com.work.test.service.CustomerService;
@@ -21,10 +21,9 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Customer> doGetCustomerRequest(
             @RequestParam(value = "id", required = false) Integer id,
-            @RequestParam(value = "finidshed", required = false) boolean finished,
             HttpServletResponse response,
             HttpServletRequest request) {
-        return customerService.findById(id, finished);
+        return customerService.findById(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT)

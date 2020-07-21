@@ -1,8 +1,8 @@
 package com.work.test.dao;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,10 +13,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 
 @Entity
@@ -26,10 +29,17 @@ import org.hibernate.annotations.Type;
 @NoArgsConstructor
 public class OrderEntity {
 
+    private Integer id;
+    private String name;
+    private CustomerEntity customer = new CustomerEntity();
+    private Set<BookEntity> books = new HashSet<>();
+    private Date startedAt;
+    private Date stoppedAt;
+    private boolean finished;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, updatable = false, nullable = false)
-    private Integer id;
     public Integer getId() {
         return id;
     }
@@ -37,21 +47,17 @@ public class OrderEntity {
     @Basic
     @Column(name = "name", nullable = true, insertable = true, updatable = true)
     @Type(type="text")
-    private String name;
     public String getName() {
         return name;
     }
 
     @ManyToOne
-    @JoinColumn(name="customer_id", nullable=false)
-    private CustomerEntity customer;
     public CustomerEntity getCustomer() {
         return customer;
     }
 
     @OneToMany
-    private List<BookEntity> books = new ArrayList<>();
-    public List<BookEntity> getBooks() {
+    public Set<BookEntity> getBooks() {
         return books;
     }
 
@@ -61,23 +67,26 @@ public class OrderEntity {
 
     @Basic
     @Column(name = "startedAt", nullable = true, insertable = true, updatable = true)
-    private DateFormat startedAt;
-    public DateFormat getStartedAt() {
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getStartedAt() {
         return startedAt;
     }
 
     @Basic
     @Column(name = "stoppedAt", nullable = true, insertable = true, updatable = true)
-    private DateFormat stoppedAt;
-    public DateFormat getStoppedAt() {
+    public Date getStoppedAt() {
         return stoppedAt;
     }
 
     @Basic
     @Column(name = "finished", nullable = true, insertable = true, updatable = true)
     @ColumnDefault("false")
-    private boolean finished;
     public boolean getFinished() {
         return finished;
+    }
+
+    public void setFinished() {
+        finished = true;
     }
 }

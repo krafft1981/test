@@ -2,7 +2,6 @@ package com.work.test.dao;
 
 import java.util.Set;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,7 +36,7 @@ public class BookEntity {
 		return id;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name="book_author",
 		joinColumns=@JoinColumn(name="book_id", nullable = false),
 		inverseJoinColumns=@JoinColumn(name="author_id", nullable = false)

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<form action="#" th:action="@{/mvc/author/update/(id=${author.id})}" th:object="${author}" method="post">
+    <table border="1">
+        <thead>
+        <tr>
+            <td>
+                <label for="id">id</label>
+                <input type="text" th:field="*{id}" id="id" placeholder="id" readonly="readonly">
+                <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="fio">Fio</label>
+                <input type="text" th:field="*{fio}" id="fio" placeholder="Fio">
+                <span th:if="${#fields.hasErrors('fio')}" th:errors="*{fio}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="birthYear">BirthYear</label>
+                <input type="text" th:field="*{birthYear}" id="birthYear" placeholder="BirthYear">
+                <span th:if="${#fields.hasErrors('birthYear')}" th:errors="*{birthYear}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="books">Books</label>
+                <input type="text" th:field="*{books}" id="books" placeholder="Books">
+                <span th:if="${#fields.hasErrors('books')}" th:errors="*{books}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update Author">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

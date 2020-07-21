@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Author List</title>
+</head>
+<body>
+<h1>Author List</h1>
+<a href="/mvc/">index</a>
+<a href="/mvc/author/add">Add Author</a>
+<br/><br/>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>fio</th>
+            <th>birthYear</th>
+            <th>books</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="author : ${authors}">
+            <td th:utext="${author.id}"></td>
+            <td th:utext="${author.fio}"></td>
+            <td th:utext="${author.birthYear}"></td>
+            <td th:utext="${author.books}"></td>
+            <td><a th:href="@{/mvc/author/edit/(id=${author.id})}">Edit</a></td>
+            <td><a th:href="@{/mvc/author/delete/(id=${author.id})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

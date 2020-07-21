@@ -52,11 +52,15 @@ public class BookService {
         }
 
         else {
-            return bookRepository
-                    .findAll()
-                    .stream().map(entity -> { return daoToDto(entity); })
-                    .collect(Collectors.toList());
+            return getAll();
         }
+    }
+
+    public List<Book> getAll() {
+        return bookRepository
+                .findAll()
+                .stream().map(entity -> { return daoToDto(entity); })
+                .collect(Collectors.toList());
     }
 
     public void updateBook(@NonNull Book book) {

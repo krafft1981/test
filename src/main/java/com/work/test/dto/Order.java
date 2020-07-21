@@ -1,16 +1,14 @@
 package com.work.test.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class Order {
 
@@ -18,8 +16,8 @@ public class Order {
     private String name;
     private Integer customerId;
     private List<Integer> books;
-    private DateFormat startedAt;
-    private DateFormat stoppedAt;
+    private Date startedAt;
+    private Date stoppedAt;
     private boolean finished;
 
     public void addBook(Integer id) {
@@ -27,11 +25,14 @@ public class Order {
     }
 
     public Order(Integer id, String name, List<Integer> books) {
-
-//        Order(id, name, null, books, null, null, false);
+        this(id, name, null, books, null, null, false);
     }
 
     public Order(String name, Integer customerId, List<Integer> books) {
-//        Order(null, name, customerId, books, null, null, false);
+        this(0, name, customerId, books, null, null, false);
+    }
+
+    public Order() {
+        books = new ArrayList<>();
     }
 }

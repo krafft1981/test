@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<form action="#" th:action="@{/mvc/customer/update/(id=${customer.id})}" th:object="${customer}" method="post">
+    <table border="1">
+        <thead>
+        <tr>
+            <td>
+                <label for="id">id</label>
+                <input type="text" th:field="*{id}" id="id" placeholder="id" readonly="readonly">
+                <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" id="name" placeholder="Name">
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="phone">Phone</label>
+                <input type="text" th:field="*{phone}" id="phone" placeholder="Phone">
+                <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update Customer">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

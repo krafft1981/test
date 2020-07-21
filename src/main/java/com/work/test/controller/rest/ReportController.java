@@ -1,4 +1,4 @@
-package com.work.test.controller;
+package com.work.test.controller.rest;
 
 import com.work.test.dto.Report;
 import com.work.test.service.ReportService;
@@ -20,7 +20,7 @@ public class ReportController {
     @RequestMapping(method = RequestMethod.GET)
     public Report doGetReportRequest(
             @RequestParam(value = "id", required = false) Integer id,
-            @RequestParam(value = "type", required = true) Integer type,
+            @RequestParam(value = "type", required = true) String type,
             HttpServletResponse response,
             HttpServletRequest request) {
         return reportService.buildReport(type, id);

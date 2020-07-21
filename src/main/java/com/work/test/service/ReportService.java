@@ -7,7 +7,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class ReportService {
 
-    public Report buildReport(@NonNull Integer type, Integer id) {
+    public Report buildReport(@NonNull String type, Integer id) {
+
+        Report report = new Report(type);
+        if (type == "") {
+
+            return report;
+        }
+
+        if (type == "") {
+
+            return report;
+        }
 
         return null;
     }

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d79bf02d-54c5-44ee-bada-3b02a21a7614" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send.sh" beforeDir="false" afterPath="$PROJECT_DIR$/send.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/AuthorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/controller/rest/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/BookEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dao/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/dto/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/test/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/test/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/work/test/CrudApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1efXWd5bGCDtMGhCmKaUC03YWG3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/views" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.work.test.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.work.test.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/work/test/config" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.test [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d79bf02d-54c5-44ee-bada-3b02a21a7614" name="Default Changelist" comment="" />
+      <created>1594713653322</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594713653322</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="410" y="149" width="1026" height="847" key="#Project_Structure" timestamp="1594959444464">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="410" y="149" width="1026" height="847" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1594959444464" />
+    <state x="630" y="377" width="520" height="392" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595262080925">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="630" y="377" width="520" height="392" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1595262080925" />
+    <state x="644" y="246" width="489" height="594" key="#com.intellij.ide.util.MemberChooser" timestamp="1595286222693">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="644" y="246" width="489" height="594" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1595286222693" />
+    <state x="627" y="322" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595258898125">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="627" y="322" width="526" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595258898125" />
+    <state x="577" y="232" width="626" height="683" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1595288006118">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="577" y="232" width="626" height="683" key="#com.intellij.unscramble.UnscrambleDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595288006118" />
+    <state x="710" y="330" width="743" height="707" key="FileChooserDialogImpl" timestamp="1594959705023">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="710" y="330" width="743" height="707" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1594959705023" />
+    <state width="1744" height="245" key="GridCell.Tab.0.bottom" timestamp="1594843178564">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1744" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178564" />
+    <state width="1744" height="245" key="GridCell.Tab.0.center" timestamp="1594843178563">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1744" height="245" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178563" />
+    <state width="1744" height="245" key="GridCell.Tab.0.left" timestamp="1594843178563">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1744" height="245" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178563" />
+    <state width="1744" height="245" key="GridCell.Tab.0.right" timestamp="1594843178564">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1744" height="245" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594843178564" />
+    <state x="397" y="177" width="992" height="732" key="SettingsEditor" timestamp="1595258486076">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="397" y="177" width="992" height="732" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1595258486076" />
+    <state x="499" y="155" width="780" height="775" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594805066303">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="499" y="155" width="780" height="775" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1594805066303" />
+    <state x="701" y="361" width="444" height="424" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595256742447">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="701" y="361" width="444" height="424" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595256742447" />
+    <state x="556" y="273" width="672" height="678" key="search.everywhere.popup" timestamp="1595263257678">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="556" y="273" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595263257678" />
+  </component>
+</project>

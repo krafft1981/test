@@ -1,5 +1,6 @@
 package com.work.test.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,5 +18,9 @@ public class Author {
 
     public void addBook(Integer id) {
         books.add(id);
+    }
+
+    public Author() {
+        books = new ArrayList<>();
     }
 }
