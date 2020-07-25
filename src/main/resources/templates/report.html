@@ -5,8 +5,8 @@
     <title>Report List</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header"/>
 <h1>Report List</h1>
-<a href="/mvc/">index</a>
 <br/><br/>
 <table border="1">
     <thead>
@@ -27,5 +27,6 @@
     </tr>
     </tbody>
 </table>
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

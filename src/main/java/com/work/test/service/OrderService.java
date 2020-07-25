@@ -7,10 +7,9 @@ import com.work.test.dao.CustomerRepository;
 import com.work.test.dao.OrderEntity;
 import com.work.test.dao.OrderRepository;
 import com.work.test.dto.Order;
-import com.work.test.exception.AuthorNotFoundException;
-import com.work.test.exception.BookNotFoundException;
-import com.work.test.exception.CustomerNotFoundException;
-import com.work.test.exception.OrderNotFoundException;
+import com.work.test.utils.exceptions.BookNotFoundException;
+import com.work.test.utils.exceptions.CustomerNotFoundException;
+import com.work.test.utils.exceptions.OrderNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -53,6 +52,7 @@ public class OrderService {
         OrderEntity entity = orderRepository
                 .findById(order.getId())
                 .orElseThrow(() -> new OrderNotFoundException(order.getId()));
+
         if (entity.getFinished() != true) {
             orderRepository.saveAndFlush(dtoToDao(order));
         }

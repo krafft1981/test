@@ -1,6 +1,6 @@
 package com.work.test.controller;
 
-import com.work.test.dto.Report;
+import com.work.test.dto.IReport;
 import com.work.test.service.ReportService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +18,7 @@ public class ReportController {
     private ReportService reportService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Report doGetReportRequest(
+    public IReport doGetReportRequest(
             @RequestParam(value = "id", required = false) Integer id,
             @RequestParam(value = "type", required = true) String type,
             HttpServletResponse response,

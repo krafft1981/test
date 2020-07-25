@@ -1,6 +1,5 @@
 package com.work.test.dao;
 
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;

@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
 </head>
 <body>
-<form action="#" th:action="@{/mvc/order/insert}" th:object="${order}" method="post">
+<div th:replace="fragments/header :: header"/>
+<form action="#" th:action="@{/mvc/order/update/(id=${order.id})}" th:object="${order}" method="post">
     <table border="1">
         <thead>
+        <tr>
+            <td>
+                <label for="id">id</label>
+                <input type="text" th:field="*{id}" id="id" placeholder="id" readonly="readonly">
+                <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+            </td>
+        </tr>
         <tr>
             <td>
                 <label for="name">Name</label>
@@ -30,11 +38,12 @@
         </tr>
         <tr>
             <td>
-                <input type="submit" value="Add Order">
+                <input type="submit" value="Update Order">
             </td>
         </tr>
         </tbody>
     </table>
 </form>
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

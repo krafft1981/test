@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
 </head>
 <body>
+<div th:replace="fragments/header :: header"/>
 <form action="#" th:action="@{/mvc/customer/insert}" th:object="${customer}" method="post">
     <table border="1">
         <thead>
@@ -31,5 +32,6 @@
         </tbody>
     </table>
 </form>
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

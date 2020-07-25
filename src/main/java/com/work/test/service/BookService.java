@@ -5,8 +5,8 @@ import com.work.test.dao.AuthorRepository;
 import com.work.test.dao.BookEntity;
 import com.work.test.dao.BookRepository;
 import com.work.test.dto.Book;
-import com.work.test.exception.AuthorNotFoundException;
-import com.work.test.exception.BookNotFoundException;
+import com.work.test.utils.exceptions.AuthorNotFoundException;
+import com.work.test.utils.exceptions.BookNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -68,9 +68,16 @@ public class BookService {
 
     public void updateBook(@NonNull Book book) {
 
-        BookEntity entity = bookRepository
+        book.getAuthors().stream().forEach(author -> {
+            authorRepository
+                    .findById(author)
+                    .orElseThrow(() -> new AuthorNotFoundException(author));
+        });
+
+        bookRepository
                 .findById(book.getId())
                 .orElseThrow(() -> new BookNotFoundException(book.getId()));
+
         bookRepository.saveAndFlush(dtoToDao(book));
     }
 

@@ -1,5 +1,10 @@
-package com.work.test.exception;
+package com.work.test.controller;
 
+import com.work.test.utils.exceptions.AuthorNotFoundException;
+import com.work.test.utils.exceptions.BookNotFoundException;
+import com.work.test.utils.exceptions.CustomerNotFoundException;
+import com.work.test.utils.exceptions.OrderNotFoundException;
+import com.work.test.utils.exceptions.ReportTypeNotFoundException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +26,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
             AuthorNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "Author not found");
+        body.put("message", ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
@@ -31,7 +36,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
             BookNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "Book not found");
+        body.put("message", ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
@@ -41,7 +46,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
             CustomerNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "Customer not found");
+        body.put("message", ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
@@ -51,19 +56,29 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
             OrderNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "Order not found");
+        body.put("message", ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(ReportNotFoundException.class)
-    public ResponseEntity<Object> handleReportNotFoundException(
-            ReportNotFoundException ex, WebRequest request) {
+    @ExceptionHandler(ReportTypeNotFoundException.class)
+    public ResponseEntity<Object> handleReportTypeNotFoundException(
+            ReportTypeNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "Report not found");
+        body.put("message", ex.getMessage());
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Object> handleIllegalArgumentExceptionException(
+            IllegalArgumentException ex, WebRequest request) {
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("message", ex.getMessage());
+
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
     @Override

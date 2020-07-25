@@ -5,8 +5,8 @@ import com.work.test.dao.AuthorRepository;
 import com.work.test.dao.BookEntity;
 import com.work.test.dao.BookRepository;
 import com.work.test.dto.Author;
-import com.work.test.exception.AuthorNotFoundException;
-import com.work.test.exception.BookNotFoundException;
+import com.work.test.utils.exceptions.AuthorNotFoundException;
+import com.work.test.utils.exceptions.BookNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -67,11 +67,25 @@ public class AuthorService {
         AuthorEntity entity = authorRepository
                 .findById(author.getId())
                 .orElseThrow(() -> new AuthorNotFoundException(author.getId()));
+
+        author.getBooks().stream().forEach(book -> {
+            bookRepository
+                    .findById(book)
+                    .orElseThrow(() -> new BookNotFoundException(book));
+        });
+
         authorRepository.saveAndFlush(dtoToDao(author));
     }
 
     public void deleteAuthor(Integer id) {
-        authorRepository.deleteById(id);
+
+        AuthorEntity entity = authorRepository
+                .findById(id)
+                .orElseThrow(() -> new AuthorNotFoundException(id));
+
+        if (entity.getBooks().isEmpty()) {
+            authorRepository.deleteById(id);
+        }
     }
 
     private Author daoToDto(AuthorEntity entity) {

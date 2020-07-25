@@ -5,8 +5,8 @@
     <title>Author List</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header"/>
 <h1>Author List</h1>
-<a href="/mvc/">index</a>
 <a href="/mvc/author/add">Add Author</a>
 <br/><br/>
     <table border="1">
@@ -29,5 +29,6 @@
         </tr>
         </tbody>
     </table>
+    <div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

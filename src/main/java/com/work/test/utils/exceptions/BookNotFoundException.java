@@ -1,4 +1,4 @@
-package com.work.test.exception;
+package com.work.test.utils.exceptions;
 
 public class BookNotFoundException extends RuntimeException {
 
